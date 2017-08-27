@@ -29,7 +29,7 @@ def randomParent(nPop) :
 
 def hitungFitness(krom,koor) :
     jarakTotal = 0
-    for i in range(len(krom)-2) :
+    for i in range(len(krom)-1) :
         a = koor[krom[i]]
         b = koor[krom[i+1]]
         jarak = round(math.sqrt(((a[0]-b[0])**2)+((a[1]-b[1])**2)))
@@ -46,8 +46,8 @@ if __name__ == '__main__':
     pCross = 0.8
     pMutasi = 0.1
 
-    nPop = 1000
-    nGen = 50
+    nPop = 500
+    nGen = 100
     nKrom = len(node)
 
     pop = genPopulias(nPop,nKrom)
@@ -119,6 +119,6 @@ if __name__ == '__main__':
             pop.append(gab[steadyState[j]])
         print pop
 
-    print "\nGenerasi Ke-50"
+    print "\nGenerasi Ke-",nGen
     print "Rute Terbaik : ",pop[0]
     print "Cost (Jarak) : " ,fitness[steadyState[0]]
